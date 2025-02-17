@@ -1,1 +1,1 @@
-<?php echo	"hello world, this a test" ?>
+<?php echo	"hello world, this a test for userpage" ?>
