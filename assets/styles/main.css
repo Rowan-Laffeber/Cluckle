@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: black;
+    margin: 0;
+    font-size: 1em;
+}
+
+.active {
+    color: #4488ff;
+}
+
+nav {
+    position: fixed;
+    height: 100dvh;
+    min-width: 15em;
+    max-width: 15em;
+    border-right: 1px solid gray;
+    top: 0;
+    left: 0;
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        padding: 1em;
+
+        li {
+            position: relative;
+            float: left;
+
+            a {
+                display: flex;
+                flex-direction: column;
+                text-decoration: none;
+                color: white;
+                font-size: 1.8em;
+                font-weight: bold;
+                text-align: left;
+                padding: 0.5em;
+            }
+        }
+
+
+        img {
+            width: 7.5em;
+            height: 7.5em;
+        }
+    }
+
+}
+
+div.articles {
+    article {
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        width: 50em;
+        margin: 0em 15em;
+        padding: 1em;
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+
+        /* border-right: 1px solid gray;  */
+                            /*mode this towards the right part with trending and stuff */
+
+        img {
+            width: 5em;
+            height: 5em;
+            margin: 0em 0.5em;
+        }
+
+        div.userAndContent {
+            display: flex;
+            flex-direction: column;
+
+            div.user {
+                display: flex;
+                flex-direction: row;
+
+                p {
+                    color: white;
+                    margin-block-start: 0em;
+                    margin-block-end: 0em;
+                }
+
+                .tag {
+                    font-weight: lighter;
+                    color: grey;
+                    padding: 0em 0.2em;
+                }
+
+                .timePosted {
+                    font-weight: lighter;
+                    color: grey;
+                }
+
+                .username {
+                    font-weight: bold;
+                }
+            }
+
+            div.content {
+                display: flex;
+                flex-direction: column;
+
+                p {
+                    color: white;
+
+                }
+            }
+            div.analytics{
+                ul{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    padding: 0;
+                    li{
+                        a{
+                            color: white;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
