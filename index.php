@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="description" content="portfolio">
+    <meta name="description" content="The social media website Cluckle">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=2.0">
-    <title>Rowan Laffeber</title>
+    <link rel="icon" href="assets/img/chicken-solid-white.png">
+    <title>Cluckle.com</title>
     <link rel="stylesheet" href="assets/styles/main.css">
     <!-- <link id="color_mode" rel="stylesheet" href="assets/cluckle-darkmode.css"> -->
   </head>
