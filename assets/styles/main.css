@@ -331,5 +331,62 @@ div.pageContent {
 
         }
     }
+}
+div.login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    img{
+        height: 24em;
+        width: 24em;
+        margin: auto 5em;
+    }
+    div.loginSideText{
+        display: flex;
+        flex-direction: column;
+        margin: auto 5em;
+        h1{
+            color: white;
+            font-size: 5em;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            label{
+                font-size: 3em;
+                color: white;
+            }
+            input{
+                height: 2em;
+                width: 16em;
+                background-color: white;
+                border: transparent;
+                color: black;
+                font-size: 1.5em;
+                margin: 1em 0em;
+                padding: 0em;
+            }
+            input.loginButton{
+                background-color: white;
+                border: transparent;
+            }
+            input:focus {
+                outline: none;
+            }
+    
+        }
+        div.linksLoginPage{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            max-width: 24em;
+            a{
+                color: white;
+                text-decoration: none;
+                font-size: 1.2em;
+            }
+        }
+    }
 
 }
