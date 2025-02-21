@@ -19,7 +19,7 @@
         <li <?php if ($url === '/chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128269; Explore</a></li>
         <li <?php if ($url === '/chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128269; Notifications</a></li>
         <li <?php if ($url === '/chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128269; Messages</a></li>
-        <li <?php if ($url === '/chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128269; Bookmarks</a></li>
+        <li <?php if ($url === '/chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128193; Bookmarks</a></li>
         <li <?php if ($url === '/chirpify/#'){ echo "class='active'";} ?>><a href="login.php">&#128269; Login</a></li>
         <li <?php if ($url === '/chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128269; Profile</a></li>
         <li <?php if ($url === '/chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128269; Premium</a></li>
