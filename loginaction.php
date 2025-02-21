@@ -1,4 +1,4 @@
 <?php 
-    echo $_POST["Email"]; 
-    echo $_POST["password"];
+    echo htmlspecialchars($_POST["Email"]); 
+    echo htmlspecialchars($_POST["password"]);
 ?>

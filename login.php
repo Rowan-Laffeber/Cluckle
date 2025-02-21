@@ -19,7 +19,7 @@
                 <label for="Email"></label>
                     <input type="Email" name="Email" id="Email" placeholder="Email" required >
                 <label for="password"></label>
-                    <input type="password" name="password" id="password" placeholder="password">
+                    <input type="password" name="password" id="password" placeholder="Password">
                 <input class="loginButton" type="submit" name="submit" id="submit" value="Log in">
             </form>
             <div class=linksLoginPage>
