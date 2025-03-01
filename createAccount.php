@@ -15,16 +15,18 @@
         <img src="assets/img/chicken-line-white.png" alt="">
         <div class="loginSideText">
             <h1>Whats Clucking</h1>
-            <form action="index.php" method="post"> <!-- loginaction.php -->
+            <form action="login.php" method="post"> <!-- loginaction.php -->
                 <label for="Email"></label>
                     <input type="Email" name="Email" id="Email" placeholder="Email" required >
                 <label for="password"></label>
                     <input type="password" name="password" id="password" placeholder="Password">
+                <label for="password"></label>
+                    <input type="password" name="password" id="password" placeholder="Repeat Password">
                 <input class="loginButton" type="submit" name="submit" id="submit" value="Log in">
             </form>
             <div class=linksLoginPage>
                 <a href="#">forgot Password</a>
-                <a href="createAccount.php">create an account</a>
+                <a href="login.php">already have an account?</a>
             </div>
         </div>
     </div>

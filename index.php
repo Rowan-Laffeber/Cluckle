@@ -38,7 +38,7 @@
               <div class="analytics">
                 <ul>
                   <li><a href="#">reactions 12</a></li>
-                  <li><a href="#">shares 5</a></li>
+                  <li><a href="#">Reclucks 5</a></li>
                   <li><a href="#">likes 32</a></li>
                   <li><a href="#">views 103</a></li>
                   <li><a href="#">bookmark</a></li>
@@ -63,7 +63,7 @@
               <div class="analytics">
                 <ul>
                   <li><a href="#">reactions 12</a></li>
-                  <li><a href="#">shares 5</a></li>
+                  <li><a href="#">Reclucks 5</a></li>
                   <li><a href="#">likes 32</a></li>
                   <li><a href="#">views 103</a></li>
                   <li><a href="#">bookmark</a></li>

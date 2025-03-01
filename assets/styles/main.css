@@ -85,6 +85,9 @@ div.pageContent {
                 img {
                     width: 5em;
                     max-width: 5em;
+                    min-width: 5em;
+                    max-height: 5em;
+                    min-height: 5em;
                     height: 5em;
                     margin: 0em 1em 0em 0em;
                     flex: 1;
@@ -177,6 +180,9 @@ div.pageContent {
                 img {
                     width: 5em;
                     max-width: 5em;
+                    min-width: 5em;
+                    max-height: 5em;
+                    min-height: 5em;
                     height: 5em;
                     margin: 0em 1em 0em 0em;
                     flex: 1;
