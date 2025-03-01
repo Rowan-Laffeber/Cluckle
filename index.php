@@ -71,9 +71,15 @@
               </div>
             </div>  
           </article>
-
-
         </div>
+        <div class="endOfContent">
+            <img src="assets/img/chicken-line-white.png" alt="">
+            <p>You've reached the end of Cluckle</p>
+            <div>
+              <p>How long have you been doomscrolling to see this?!</p>
+              <p>Go touch some grass!</p>
+            </div>
+          </div>
       </div>
 
       <div class="sideMenu">
