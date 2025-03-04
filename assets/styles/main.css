@@ -69,10 +69,15 @@ nav {
 div.pageContent {
     display: flex;
     flex-direction: row;
+    div.createAndArticles::-webkit-scrollbar {
+        display: none;
+    }
     div.createAndArticles {
         display: flex;
         flex-direction: column;
         width: auto;
+        height: 100vh;
+        overflow: scroll;
         div.createPost{
                 display: flex;
                 flex-direction: row;
