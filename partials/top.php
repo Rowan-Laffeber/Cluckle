@@ -15,14 +15,14 @@
       <ul>
         <img src="assets/img/chicken-line-white.png" alt="">
 
-        <li><a <?php if ($url === '/chirpify/index.php'){ echo "class='active'";} ?> href="index.php">&#128269; Home</a></li>
-        <li <?php if ($url === '/chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128269; Explore</a></li>
-        <li <?php if ($url === '/chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128269; Notifications</a></li>
-        <li <?php if ($url === '/chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128269; Messages</a></li>
-        <li <?php if ($url === '/chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128193; Bookmarks</a></li>
-        <li <?php if ($url === '/chirpify/#'){ echo "class='active'";} ?>><a href="login.php">&#128269; Login</a></li>
-        <li <?php if ($url === '/chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128269; Profile</a></li>
-        <li <?php if ($url === '/chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128269; Premium</a></li>
-        <li <?php if ($url === '/chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128269; More</a></li>
+        <li><a <?php if ($url === '/Chirpify/index.php'){ echo "class='active'";} ?> href="index.php">&#128269; Home</a></li>
+        <li <?php if ($url === '/Chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128269; Explore</a></li>
+        <li <?php if ($url === '/Chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128269; Notifications</a></li>
+        <li <?php if ($url === '/Chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128269; Messages</a></li>
+        <li <?php if ($url === '/Chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128193; Bookmarks</a></li>
+        <li <?php if ($url === '/Chirpify/login.php'){ echo "class='active'";} ?>><a href="login.php">&#128269; Login</a></li>
+        <li <?php if ($url === '/Chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128269; Profile</a></li>
+        <li <?php if ($url === '/Chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128269; Premium</a></li>
+        <li <?php if ($url === '/Chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128269; More</a></li>
       </ul>
     </nav>

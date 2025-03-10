@@ -48,7 +48,7 @@ nav {
 
             a:hover {
                 color: #4488ff;
-                
+
             }
 
             a.active {
@@ -69,40 +69,76 @@ nav {
 div.pageContent {
     display: flex;
     flex-direction: row;
+
     div.createAndArticles::-webkit-scrollbar {
         display: none;
     }
+
     div.createAndArticles {
         display: flex;
         flex-direction: column;
         width: auto;
         height: 100vh;
         overflow: scroll;
-        div.createPost{
+        div.topNav{
+            border-bottom: 1px solid gray;
+            margin: 0em 0em 0em 15em;
+            height: 3.5em;
+            ul{
                 display: flex;
                 flex-direction: row;
-                height: fit-content;
-                width: auto;
-                margin: 0em 0em 0em 15em;
-                padding: 1em;
-                border-bottom: 1px solid gray;
+                justify-content: space-around;
+                list-style: none;
+                padding-inline-start: 0em;
+                height: 3.5em;
+                margin-block-start: 0em;
+                margin-block-end: 0em;
 
-                img {
-                    width: 5em;
-                    max-width: 5em;
-                    min-width: 5em;
-                    max-height: 5em;
-                    min-height: 5em;
-                    height: 5em;
-                    margin: 0em 1em 0em 0em;
-                    flex: 1;
+                li{
+                border-bottom: 0.25em solid #4488ff;
+                height: 3.5em;
+                padding-top: 1em;
+                
+                
+
+                    /* height: 10em; */
+                    a{
+                        font-size: 1.2em;
+                        color: white;
+                        text-decoration: none;
+                        /* height: 3em; */
+                        padding: 1em 0em 1em 0em;
+
+                    }
                 }
-                div.contentAndLowernav{
-                    display: flex;
-                    flex-direction: column;
-                    width: auto;
-                    flex: 8;
-                    textarea{
+            }
+        }
+
+        div.createPost {
+            display: flex;
+            flex-direction: row;
+            height: fit-content;
+            width: auto;
+            margin: 0em 0em 0em 15em;
+            padding: 1em;
+            border-bottom: 1px solid gray;
+
+            img {
+                width: 5em;
+                max-width: 5em;
+                min-width: 5em;
+                max-height: 5em;
+                min-height: 5em;
+                height: 5em;
+                margin: 0em 1em 0em 0em;
+                flex: 1;
+            }
+            form.contentAndLowernav{
+                display: flex;
+                flex-direction: column;
+                width: auto;
+                flex: 8;
+                    textarea {
                         margin: 0em 0em 1em 0em;
                         padding: 0.5em;
                         width: auto;
@@ -116,17 +152,21 @@ div.pageContent {
                         border-radius: 1em;
 
                     }
-                    textarea:focus{
+
+                    textarea:focus {
                         outline: none;
                     }
-                    textarea::placeholder{
+
+                    textarea::placeholder {
                         color: white;
                     }
-                    div.lowerNav{
+
+                    div.lowerNav {
                         display: flex;
                         flex-direction: row;
                         justify-content: space-between;
-                        div.addables{                          
+
+                        div.addables {
                             ul {
                                 display: flex;
                                 flex-direction: row;
@@ -134,23 +174,26 @@ div.pageContent {
                                 padding-inline-start: 0em;
                                 margin-block-start: 0em;
                                 margin-block-end: 0em;
-                                
+
                                 li {
                                     margin: 0em 1em;
                                     display: flex;
                                     justify-content: center;
+
                                     p {
                                         color: white;
                                     }
 
                                 }
-                                li.firstIcon{
+
+                                li.firstIcon {
                                     margin: 0em 1em 0em 0em;
                                 }
                             }
 
                         }
-                        button{
+
+                        input.postButton {
                             background-color: #4488ff;
                             color: white;
                             border-radius: 2em;
@@ -160,15 +203,16 @@ div.pageContent {
                             border: none;
                             font-weight: bold;
                             margin: auto 0em auto auto;
-                        
+
                         }
-                        
-                        
+
+
                     }
-                }
+            }
 
 
         }
+
         div.articles {
             article {
                 display: flex;
@@ -197,6 +241,7 @@ div.pageContent {
                     display: flex;
                     flex-direction: column;
                     flex: 8;
+
                     div.user {
                         display: flex;
                         flex-direction: row;
@@ -251,7 +296,8 @@ div.pageContent {
                 }
             }
         }
-        div.endOfContent{
+
+        div.endOfContent {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -259,16 +305,19 @@ div.pageContent {
             width: auto;
             margin: 0em 0em 0em 15em;
             padding: 1em;
-            img{
+
+            img {
                 width: 7.5em;
                 height: 7.5em;
             }
-            p{
+
+            p {
                 color: white;
                 font-size: 1.2em;
                 margin: 0;
             }
-            div{
+
+            div {
                 margin: 1em;
                 display: flex;
                 flex-direction: column;
@@ -283,6 +332,7 @@ div.pageContent {
         border-left: 1px solid gray;
         width: 50em;
         min-height: 100dvh;
+
         div.search {
             form {
                 border-radius: 2.5em;
@@ -304,6 +354,7 @@ div.pageContent {
                 input::placeholder {
                     color: white;
                 }
+
                 input:focus {
                     outline: none;
                 }
@@ -368,32 +419,39 @@ div.pageContent {
         }
     }
 }
-div.login{
+
+div.login {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    img{
+
+    img {
         height: 24em;
         width: 24em;
         margin: auto 5em;
     }
-    div.loginSideText{
+
+    div.loginSideText {
         display: flex;
         flex-direction: column;
         margin: auto 5em;
-        h1{
+
+        h1 {
             color: white;
             font-size: 5em;
         }
-        form{
+
+        form {
             display: flex;
             flex-direction: column;
-            label{
+
+            label {
                 font-size: 3em;
                 color: white;
             }
-            input{
+
+            input {
                 height: 2em;
                 width: 16em;
                 background-color: white;
@@ -403,21 +461,25 @@ div.login{
                 margin: 1em 0em;
                 padding: 0em;
             }
-            input.loginButton{
+
+            input.loginButton {
                 background-color: white;
                 border: transparent;
             }
+
             input:focus {
                 outline: none;
             }
-    
+
         }
-        div.linksLoginPage{
+
+        div.linksLoginPage {
             display: flex;
             flex-direction: row;
             justify-content: space-around;
             max-width: 24em;
-            a{
+
+            a {
                 color: white;
                 text-decoration: none;
                 font-size: 1.2em;

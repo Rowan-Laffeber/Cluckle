@@ -1,25 +1,30 @@
 <?php require ("partials/top.php"); ?>
     <div class="pageContent">
       <div class="createAndArticles">
+        <div class="topNav">
+          <ul>
+            <li><a href="#">For you</a></li>
+            <li><a href="#">Following</a></li>
+          </ul>
+        </div>
         <div class="createPost">
-        <img src="assets/img/chicken-solid-white.png" alt="profilePicture">
-
-            <div class="contentAndLowernav">
-              <textarea name="textarea" id="textarea" placeholder="Whats Clucking?!"></textarea>
-              <div class="lowerNav">
-                <div class="addables">
-                  <ul>
-                    <li class="firstIcon"><p>picture</p></li>
-                    <li><p>emoji</p></li>
-                    <li><p>gif</p></li>
-                    <li><p>video</p></li>
-                    <li><p>poll</p></li>
-                    <li><p>location</p></li>
-                  </ul>
+          <img src="assets/img/chicken-solid-white.png" alt="profilePicture">
+              <form class="contentAndLowernav" action="" method="post">
+                <textarea name="textarea" id="textarea" placeholder="Whats Clucking?!"></textarea>
+                <div class="lowerNav">
+                  <div class="addables">
+                    <ul>
+                      <li class="firstIcon"><p>picture</p></li>
+                      <li><p>emoji</p></li>
+                      <li><p>gif</p></li>
+                      <li><p>video</p></li>
+                      <li><p>poll</p></li>
+                      <li><p>location</p></li>
+                    </ul>
+                  </div>
+                  <input class="postButton" type="submit" name="submit" id="submit" value="Post"> 
                 </div>
-                <button>post</button>
-            </div>
-          </div>
+            </form>
         </div>
         <div class="articles">
         <article>
