@@ -484,3 +484,74 @@ div.login {
     }
 
 }
+.userpage{
+    color: white;
+    margin: 0em 0em 0em 15em;
+    .banner{
+        width: inherit;
+        height: 15em;
+    }
+    .profilePicture{
+        width: 10em;
+        height: 10em;
+        border-radius: 50%;
+        border: 5px solid #4488ff;
+    }
+    .textUser{
+        margin-left: 1em;
+        .usernameHandle{
+            display: flex;
+            flex-direction: row;
+            .handle{
+                color: gray;
+                margin-left: 0.5em;
+            }
+        }
+        .status{
+            margin-block-start: 0em;
+            margin-block-end: 0em;
+        }
+        .userInfo{
+            .userAbout{
+                display: flex;
+                justify-content: row;
+                p{
+                    color: gray;
+                    margin-block-start: 1em;
+                    margin-block-end: 0em;
+                }
+                a{
+                    margin: 0em 0.5em;
+                }
+            }
+            p{
+                color: gray;
+                margin-block-start: 0em;
+                margin-block-end: 1em;
+            }
+        }
+        .followingFollowers{
+            display: flex;
+            flex-direction: row;
+            .following, .followers{
+                display: flex;
+                flex-direction: row;
+                .followNumber{
+                    color: white;
+                    font-weight: bold;
+                    margin-block-start: 0em;
+                    margin-block-end: 0em;
+                }
+                .followText{
+                    color: gray;
+                    margin-left: 0.5em;
+                    margin-block-start: 0em;
+                    margin-block-end: 0em;
+                }
+            }
+            .followers{
+                margin-left: 1em;
+            }
+        }
+    }
+}
