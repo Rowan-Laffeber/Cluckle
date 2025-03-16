@@ -6,6 +6,8 @@
         <div class="userpage">
             <div>
                 <img class="banner" src="assets/img/banner.png" alt="">
+                <img class="banner2" src="assets/img/banner.png" alt="">
+
                 <img class="profilePicture" src="assets/img/chicken-solid-white.png" alt="">
                 <div class="textUser">
                   <div class="usernameHandle">

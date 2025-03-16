@@ -490,6 +490,25 @@ div.login {
     .banner{
         width: inherit;
         height: 15em;
+        .logo-container {
+            position: relative;
+        }
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 20em;
+            background-image: url('jouw-afbeelding.jpg');
+            background-size: 8em;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1; 
+            opacity: 0.5;
+    }
+    .banner2    {
+        width: inherit;
+        height: 15em;
     }
     .profilePicture{
         width: 10em;
