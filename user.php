@@ -1,42 +1,40 @@
 <?php require ("partials/top.php"); ?>
-    <div class="pageContent">
-      <div class="createAndArticles">
+  <div class="pageContent">
+    <div class="createAndArticles">
 
+      <div class="userpage">
 
-        <div class="userpage">
-            <div>
-                <img class="banner" src="assets/img/banner.png" alt="">
-                <img class="banner2" src="assets/img/banner.png" alt="">
+        <div class="bannerPfp">
+          <img class="banner" src="assets/img/banner.png" alt="">
+          <img class="profilePicture" src="assets/img/chicken-solid-white.png" alt="">
+        </div>
 
-                <img class="profilePicture" src="assets/img/chicken-solid-white.png" alt="">
-                <div class="textUser">
-                  <div class="usernameHandle">
-                    <p class=username>Cluckle</p>
-                    <p class="handle">@Cluckle</p>
-                  </div>
-                  <p class="status">What's Clucking?!</p>
-                  <div class="userInfo">
-                    <div class="userAbout">
-                      <p>everywhere</p>
-                      <p><a href="/chirpify/about.php">cluckle.com/about</a></p>
-                      <p>born 12-12-12</p>
-                    </div>
-                    <p>joined 12-12-12</p>
-                  </div>
-                  <div class="followingFollowers">
-                      <div class="following">
-                          <p class="followNumber">10</p>
-                          <p class="followText">following</p>
-                      </div>
-                      <div class="followers">
-                          <p class="followNumber">10</p>
-                          <p class="followText">followers</p>
-                      </div>
-                  </div>
-                </div>
-                
-                
+          <div class="textUser">
+            <div class="usernameHandle">
+              <p class=username>Cluckle</p>
+              <p class="handle">@Cluckle</p>
             </div>
+            <p class="status">What's Clucking?!</p>
+            <div class="userInfo">
+              <div class="userAbout">
+                <p>everywhere</p>
+                <p><a href="/chirpify/about.php">cluckle.com/about</a></p>
+                <p>born 12-12-12</p>
+              </div>
+              <p>joined 12-12-12</p>
+            </div>
+            <div class="followingFollowers">
+              <div class="following">
+                <p class="followNumber">10</p>
+                <p class="followText">following</p>
+              </div>
+              <div class="followers">
+                <p class="followNumber">10</p>
+                <p class="followText">followers</p>
+              </div>
+            </div>
+          </div>
+                
         </div>
 
 
