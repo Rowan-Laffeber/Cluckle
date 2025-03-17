@@ -487,36 +487,36 @@ div.login {
 .userpage{
     color: white;
     margin: 0em 0em 0em 15em;
-    .banner{
-        width: inherit;
-        height: 15em;
-        .logo-container {
-            position: relative;
-        }
-            content: "";
+    .bannerPfp{
+        width: 100%;
+        max-height: 20em;
+        height: 20em;
+        position: relative;
+        border: 1px solid #4488ff;
+        background-color: maroon;
+
+        
+        img.banner{
+            height: 15em;
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 10px;
-            height: 20em;
-            background-image: url('jouw-afbeelding.jpg');
-            background-size: 8em;
-            background-position: center;
-            background-repeat: no-repeat;
-            z-index: -1; 
-            opacity: 0.5;
+            /* background-color: maroon; */
+        }
+        img.profilePicture{
+            position: absolute;
+            margin-top: 10em;
+            margin-left: 2em;
+            width: 10em;
+            height: 10em;
+            border-radius: 50%;
+            border: 1px solid #4488ff;
+            background-color: maroon;
+        }
+
     }
-    .banner2    {
-        width: inherit;
-        height: 15em;
-    }
-    .profilePicture{
-        width: 10em;
-        height: 10em;
-        border-radius: 50%;
-        border: 5px solid #4488ff;
-    }
+
+
     .textUser{
+        position: relative;
         margin-left: 1em;
         .usernameHandle{
             display: flex;
