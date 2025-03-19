@@ -29,9 +29,9 @@
                         <label for="Email"></label>
                             <input type="Email" name="Email" id="Email" placeholder="Email" required >
                         <label for="password"></label>
-                            <input type="password" name="password" id="password" placeholder="Password">
+                            <input type="password" name="password" id="password" placeholder="Password" required>
                         <label for="password"></label>
-                            <input type="password" name="password" id="password" placeholder="Repeat Password">
+                            <input type="password" name="password" id="password" placeholder="Repeat Password" required >
                     </div>
                 </div>
                 
