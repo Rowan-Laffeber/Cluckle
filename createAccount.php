@@ -11,20 +11,34 @@
   </head>
   <body>
 
-    <div class="login">
+    <div class="createAccount">
         <img src="assets/img/chicken-line-white.png" alt="">
-        <div class="loginSideText">
+        <div class="createAccountSideText">
             <h1>Whats Clucking</h1>
             <form action="login.php" method="post"> <!-- loginaction.php -->
-                <label for="Email"></label>
-                    <input type="Email" name="Email" id="Email" placeholder="Email" required >
-                <label for="password"></label>
-                    <input type="password" name="password" id="password" placeholder="Password">
-                <label for="password"></label>
-                    <input type="password" name="password" id="password" placeholder="Repeat Password">
-                <input class="loginButton" type="submit" name="submit" id="submit" value="Log in">
+                <div class="createAccountFull">
+                    <div class="createAccountHalf">
+                        <label for="username"></label>
+                            <input type="text" name="username" id="username" placeholder="Username" required >
+                        <label for="handle"></label>
+                            <input type="text" name="handle" id="handle" placeholder="Handle" required >
+                        <label for="phone-number"></label>
+                            <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Phone number" required minlength="11" maxlength="14">
+                    </div>
+                    <div class="createAccountHalf createAccountRight">
+                        <label for="Email"></label>
+                            <input type="Email" name="Email" id="Email" placeholder="Email" required >
+                        <label for="password"></label>
+                            <input type="password" name="password" id="password" placeholder="Password">
+                        <label for="password"></label>
+                            <input type="password" name="password" id="password" placeholder="Repeat Password">
+                    </div>
+                </div>
+                
+                <input class="createAccountButton" type="submit" name="submit" id="submit" value="Create account">
+
             </form>
-            <div class=linksLoginPage>
+            <div class=linksCreateAccountPage>
                 <a href="#">forgot Password</a>
                 <a href="login.php">already have an account?</a>
             </div>
