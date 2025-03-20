@@ -80,26 +80,25 @@ div.pageContent {
         div.topNav{
             border-bottom: 1px solid gray;
             margin: 0em 0em 0em 15em;
-            height: 3.5em;
+            height: 3.75em;
             ul{
                 display: flex;
                 flex-direction: row;
                 justify-content: space-around;
                 list-style: none;
                 padding-inline-start: 0em;
-                height: 3.5em;
+                height: 3.75em;
                 margin-block-start: 0em;
                 margin-block-end: 0em;
 
                 li{
                 border-bottom: 0.25em solid #4488ff;
-                height: 3.5em;
+                height: 2.5em;
                 padding-top: 1em;
                     a{
                         font-size: 1.2em;
                         color: white;
                         text-decoration: none;
-                        /* height: 3em; */
                         padding: 1em 0em 1em 0em;
 
                     }
