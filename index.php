@@ -9,7 +9,7 @@
         </div>
         <div class="createPost">
           <img src="assets/img/chicken-solid-white.png" alt="profilePicture">
-              <form class="contentAndLowernav" action="" method="post">
+              <form class="contentAndLowernav" action="postAction.php" method="post">
                 <textarea name="textarea" id="textarea" placeholder="Whats Clucking?!"></textarea>
                 <div class="lowerNav">
                   <div class="addables">

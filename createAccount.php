@@ -15,15 +15,15 @@
         <img src="assets/img/chicken-line-white.png" alt="">
         <div class="createAccountSideText">
             <h1>Whats Clucking</h1>
-            <form action="login.php" method="post"> <!-- loginaction.php -->
+            <form action="createaccount-action.php" method="POST"> <!-- loginaction.php -->
                 <div class="createAccountFull">
                     <div class="createAccountHalf">
                         <label for="username"></label>
                             <input type="text" name="username" id="username" placeholder="Username" required >
                         <label for="handle"></label>
                             <input type="text" name="handle" id="handle" placeholder="Handle" required >
-                        <label for="phone-number"></label>
-                            <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Phone number" required minlength="11" maxlength="14">
+                        <label for="phonenumber"></label>
+                            <input type="tel" name="phonenumber" id="phonenumber" placeholder="Phone number" required minlength="11" maxlength="14">
                     </div>
                     <div class="createAccountHalf createAccountRight">
                         <label for="Email"></label>
@@ -31,7 +31,7 @@
                         <label for="password"></label>
                             <input type="password" name="password" id="password" placeholder="Password" required>
                         <label for="password"></label>
-                            <input type="password" name="password" id="password" placeholder="Repeat Password" required >
+                            <input type="password" name="password" id="password" placeholder="Repeat Password" >
                     </div>
                 </div>
                 

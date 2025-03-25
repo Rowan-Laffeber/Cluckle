@@ -9,3 +9,5 @@ $users = $get_all_users->fetchAll();
 foreach ($users as $user){    
     echo $user['name'];
 }
+
+
