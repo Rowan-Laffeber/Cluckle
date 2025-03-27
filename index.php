@@ -33,32 +33,24 @@
          require ("database/conn.php");
 
 
-        $get_all_posts = $conn->prepare("SELECT * FROM post");
-        $get_all_posts->execute();
-        $posts = $get_all_posts->fetchAll();
+         $get_all_posts = $conn->prepare("SELECT * FROM post");
+         $get_all_posts->execute();
+         $posts = $get_all_posts->fetchAll();
 
-        $stmt = $conn->prepare("SELECT * FROM account WHERE id =$_SESSION['userId']");
-        $stmt->bindParam(":Email", $_POST['Email']);
-        $stmt->execute();
-        $account = $stmt->fetch();
-
-        $username = $account['name'];
-        $handle = $account['handle'];
 
 
 
          foreach ($posts as $post){
            $contentText = $post['contentText'];
            $datePosted = $post['datePosted'];
-           $
            $imageSrc = "assets/img/chicken-solid-white.png";
            $imageAlt = "assets/img/chicken-line-white.png";
              echo "<article>".
                "<img src='$imageSrc' alt='$imageAlt'>".
                "<div class='userAndContent'>".
                "<div class='user'>".
-               "<p class='username'>$username</p>".
-               "<p class='handle'>$handle</p>".
+               "<p class='username'>De Kale Kip</p>".
+               "<p class='handle'>@DeKaleKip</p>".
                "<p class='timePosted'>&middot;$datePosted</p>".
                "</div>".
                "<div class='content'>".
