@@ -1,4 +1,4 @@
-// <?php require ("partials/session.php"); ?> 
+<?php require ("partials/session.php"); ?> 
 <?php require ("partials/top.php"); ?>
     <div class="pageContent">
       <div class="createAndArticles">
@@ -40,7 +40,16 @@
 
 
 
+
          foreach ($posts as $post){
+          $stmt = $conn->prepare("SELECT * FROM account WHERE id =:userId");
+          $stmt->bindParam(":userId", $post['userId']);
+          $stmt->execute();
+          $account = $stmt->fetch();
+          
+          $username = $account['name'];
+          $handle = $account['handle'];
+
            $contentText = $post['contentText'];
            $datePosted = $post['datePosted'];
            $imageSrc = "assets/img/chicken-solid-white.png";
@@ -49,8 +58,8 @@
                "<img src='$imageSrc' alt='$imageAlt'>".
                "<div class='userAndContent'>".
                "<div class='user'>".
-               "<p class='username'>De Kale Kip</p>".
-               "<p class='handle'>@DeKaleKip</p>".
+               "<p class='username'>$username</p>".
+               "<p class='handle'>$handle</p>".
                "<p class='timePosted'>&middot;$datePosted</p>".
                "</div>".
                "<div class='content'>".
