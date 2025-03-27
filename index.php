@@ -27,55 +27,46 @@
             </form>
         </div>
         <div class="articles">
-        <article>
-            <img src="assets/img/chicken-solid-white.png" alt="profilePicture">
-            <div class="userAndContent">
-              <div class="user">
-                <p class="username">De Kale Kip</p>
-                <p class="handle">@DeKaleKip</p>
-                <p class="timePosted">&middot; 12-03-24</p>
-              </div>
-              <div class="content">
-                <p>lorem</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores corrupti at officiis est quam excepturi nostrum reiciendis totam omnis, sequi exercitationem, perferendis repellat animi ea ab tenetur dolor perspiciatis labore.</p>
-                <p>lorem</p>
-              </div>
-              <div class="analytics">
-                <ul>
-                  <li><a href="#">reactions 12</a></li>
-                  <li><a href="#">Reclucks 5</a></li>
-                  <li><a href="#">likes 32</a></li>
-                  <li><a href="#">views 103</a></li>
-                  <li><a href="#">bookmark</a></li>
-                </ul>
-              </div>
-            </div>  
-          </article>
-          
-          <article>
-            <img src="assets/img/chicken-solid-white.png" alt="profilePicture">
-            <div class="userAndContent">
-              <div class="user">
-                <p class="username">De Kale Kip</p>
-                <p class="handle">@DeKaleKip</p>
-                <p class="timePosted">&middot; 12-03-24</p>
-              </div>
-              <div class="content">
-                <p>lorem</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores corrupti at officiis est quam excepturi nostrum reiciendis totam omnis, sequi exercitationem, perferendis repellat animi ea ab tenetur dolor perspiciatis labore.</p>
-                <p>lorem insum</p>
-              </div>
-              <div class="analytics">
-                <ul>
-                  <li><a href="#">reactions 12</a></li>
-                  <li><a href="#">Reclucks 5</a></li>
-                  <li><a href="#">likes 32</a></li>
-                  <li><a href="#">views 103</a></li>
-                  <li><a href="#">bookmark</a></li>
-                </ul>
-              </div>
-            </div>  
-          </article>
+        <?php 
+          require ("database/conn.php");
+
+
+          $get_all_posts = $conn->prepare("SELECT * FROM post");
+          $get_all_posts->execute();
+          $posts = $get_all_posts->fetchAll();
+
+
+
+
+          foreach ($posts as $post){
+            $contentText = $post['contentText'];
+            $datePosted = $post['datePosted'];
+            $imageSrc = "assets/img/chicken-solid-white.png";
+            $imageAlt = "assets/img/chicken-line-white.png";    
+              echo "<article>".
+                "<img src='$imageSrc' alt='$imageAlt'>".
+                "<div class='userAndContent'>".
+                "<div class='user'>".
+                "<p class='username'>De Kale Kip</p>".
+                "<p class='handle'>@DeKaleKip</p>".
+                "<p class='timePosted'>&middot;$datePosted</p>".
+                "</div>".
+                "<div class='content'>".
+                "<p>$contentText</p>".
+                "</div>".
+                "<div class='analytics'>".
+                "<ul>".
+                  "<li><a href='#'>reactions 12</a></li>".
+                  "<li><a href='#'>Reclucks 5</a></li>".
+                  "<li><a href='#'>likes 32</a></li>".
+                  "<li><a href='#'>views 103</a></li>".
+                  "<li><a href='#'>bookmark</a></li>".
+                "</ul>".
+              "</div>".
+            "</div>".
+          "</article>";
+          } 
+        ?>
         </div>
         <div class="endOfContent">
             <img src="assets/img/chicken-line-white.png" alt="">
