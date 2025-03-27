@@ -1,3 +1,4 @@
+<?php require ("partials/session.php"); ?>
 <?php require ("partials/top.php"); ?>
     <div class="pageContent">
       <div class="createAndArticles">
