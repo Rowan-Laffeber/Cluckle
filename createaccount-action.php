@@ -16,4 +16,4 @@ $insert_user->bindParam(":password", $hash);
 
 $insert_user->execute();
 
-header("location: loginaction.php");
+header("location: login.php");
