@@ -14,7 +14,8 @@
                 <div class="lowerNav">
                   <div class="addables">
                     <ul>
-                      <li class="firstIcon"><p>picture</p></li>
+
+                      <li class="firstIcon"><p>picture</p><!-- <input type="file" name="contentPic" id="contentPic"> --></li>
                       <li><p>emoji</p></li>
                       <li><p>gif</p></li>
                       <li><p>video</p></li>
