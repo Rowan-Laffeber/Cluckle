@@ -15,7 +15,7 @@
         <img src="assets/img/chicken-line-white.png" alt="">
         <div class="loginSideText">
             <h1>Whats Clucking</h1>
-            <form action="loginaction.php" method="post"> <!-- loginaction.php -->
+            <form action="loginaction.php" method="post">
                 <label for="Email"></label>
                     <input type="Email" name="Email" id="Email" placeholder="Email" required >
                 <label for="password"></label>

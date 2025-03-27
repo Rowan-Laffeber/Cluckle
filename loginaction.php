@@ -10,12 +10,12 @@ session_start();
 
 
  if(password_verify($_POST['password'], $account['password'])){
-    $_SESSION['user_id'] = $account['id'];
+    $_SESSION['userId'] = $account['id'];
     $_SESSION['email'] = $account['email'];
-    $_SESSION['logged_in'] = true; 
+    $_SESSION['loggedIn'] = true; 
 
-   // echo $_SESSION['logged_in'];
-   // echo $_SESSION['user_id'];
+   // echo $_SESSION['loggedIn'];
+   // echo $_SESSION['userId'];
    // echo $_SESSION['email'];
     header("location: index.php");
  }else{
