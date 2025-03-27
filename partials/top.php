@@ -20,7 +20,6 @@
         <li <?php if ($url === '/Chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128269; Notifications</a></li>
         <li <?php if ($url === '/Chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128269; Messages</a></li>
         <li <?php if ($url === '/Chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128193; Bookmarks</a></li>
-        <li <?php if ($url === '/Chirpify/login.php'){ echo "class='active'";} ?>><a href="login.php">&#128269; Login</a></li>
         <li <?php if ($url === '/Chirpify/user.php'){ echo "class='active'";} ?>><a href="user.php">&#128269; Profile</a></li>
         <li <?php if ($url === '/Chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128269; Premium</a></li>
         <li <?php if ($url === '/Chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128269; More</a></li>
