@@ -14,10 +14,10 @@ session_start();
     $_SESSION['email'] = $account['email'];
     $_SESSION['logged_in'] = true; 
 
-   echo $_SESSION['logged_in'];
-   echo $_SESSION['user_id'];
-   echo $_SESSION['email'];
-   //  header("location: index.php");
+   // echo $_SESSION['logged_in'];
+   // echo $_SESSION['user_id'];
+   // echo $_SESSION['email'];
+    header("location: index.php");
  }else{
     echo "klopt niet";
  }
