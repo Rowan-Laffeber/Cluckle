@@ -10,10 +10,14 @@ session_start();
 
 
  if(password_verify($_POST['password'], $account['password'])){
-    echo "Klopt!";
-    //Nu nog opzoeken hoe je een session plaats zodat jouw ingelogde status onthouden blijft over de website
-   $_SESSION
-    header("location: index.php");
+    $_SESSION['user_id'] = $account['id'];
+    $_SESSION['email'] = $account['email'];
+    $_SESSION['logged_in'] = true; 
+
+   echo $_SESSION['logged_in'];
+   echo $_SESSION['user_id'];
+   echo $_SESSION['email'];
+   //  header("location: index.php");
  }else{
     echo "klopt niet";
  }
