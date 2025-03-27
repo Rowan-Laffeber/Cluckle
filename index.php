@@ -37,10 +37,6 @@
          $get_all_posts->execute();
          $posts = $get_all_posts->fetchAll();
 
-
-
-
-
          foreach ($posts as $post){
           $stmt = $conn->prepare("SELECT * FROM account WHERE id =:userId");
           $stmt->bindParam(":userId", $post['userId']);
