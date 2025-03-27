@@ -25,4 +25,4 @@
         <li <?php if ($url === '/Chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128269; Premium</a></li>
         <li <?php if ($url === '/Chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128269; More</a></li>
       </ul>
-    </nav>
+  </nav>
