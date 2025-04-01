@@ -48,7 +48,6 @@
 
            $contentText = $post['contentText'];
            $datePosted = $post['datePosted'];
-           $
            $imageSrc = "assets/img/chicken-solid-white.png";
            $imageAlt = "assets/img/chicken-line-white.png";
              echo "<article>".
