@@ -18,6 +18,18 @@ CREATE TABLE posts (
     FOREIGN KEY (user_id) REFERENCES accounts(id)
 );
 
+-- Create comment Table
+CREATE TABLE comments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    post_id INT,
+    content TEXT,
+    picture VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES accounts(id)
+    FOREIGN KEY (post_id) REFERENCES accounts(id)
+);
+
 -- Create Followers Table
 CREATE TABLE followers (
     id INT AUTO_INCREMENT PRIMARY KEY,
