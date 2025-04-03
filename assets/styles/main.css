@@ -292,6 +292,94 @@ div.pageContent {
             }
         }
 
+
+        div.currentPost {
+            article.post {
+                display: flex;
+                flex-direction: row;
+                height: auto;
+                width: auto;
+                margin: 0em 0em 0em 15em;
+                padding: 1em;
+                border-bottom: 1px solid gray;
+
+                /* border-right: 1px solid gray;  */
+                /*mode this towards the right part with trending and stuff */
+
+
+
+                div.userAndContent {
+                    display: flex;
+                    flex-direction: column;
+                    flex: 8;
+
+                    div.imgUser {
+                        display: flex;
+                        flex-direction: row;
+                        img {
+                            width: 5em;
+                            max-width: 5em;
+                            min-width: 5em;
+                            max-height: 5em;
+                            min-height: 5em;
+                            height: 5em;
+                            margin: 0em 1em 0em 0em;
+                            flex: 1;
+                        }
+                        div.user{
+                            p {
+                                color: white;
+                            }
+
+                            .handle {
+                                font-weight: lighter;
+                                color: grey;
+                                margin-block-start: 0.5em;
+                                margin-block-end: 1em;
+                            }
+                            .username {
+                                font-weight: bold;
+                                margin-block-start: 1em;
+                                margin-block-end: 0.5em;
+                            }
+                        }
+
+
+                    }
+
+                    div.content {
+                        display: flex;
+                        flex-direction: column;
+
+                        p {
+                            color: white;
+
+                        }
+                    }
+                    .timePosted {
+                        font-weight: lighter;
+                        color: grey;
+                    }
+
+                    div.analytics {
+                        ul {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            padding: 0;
+
+                            li {
+                                a {
+                                    color: white;
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         div.endOfContent {
             display: flex;
             flex-direction: column;

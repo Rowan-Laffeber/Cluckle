@@ -2,20 +2,25 @@
 <?php require ("partials/top.php"); ?>
 <div class="pageContent">
     <div class="createAndArticles">
+        <div class="currentPost">
         <?php
 
 
         echo "<article class='post'>".
-            "<img src='assets/img/chicken-line-white.png' alt=''>".
+
             "<div class='userAndContent'>".
-                "<div class='user'>".
-                    "<p class='username'>name</p>".
-                    "<p class='handle'>handle</p>".
+            "<div class='imgUser'>".
+
+                "<img src='assets/img/chicken-line-white.png' alt=''>".
+                    "<div class='user'>".
+                        "<p class='username'>name</p>".
+                        "<p class='handle'>handle</p>".
+                    "</div>".
                 "</div>".
                 "<div class='content'>".
                     "<p>content</p>".
                 "</div>".
-                "<p class='timePosted'>&middot;time</p>".
+                "<p class='timePosted'>time</p>".
                 "<div class='analytics'>".
                     "<ul>".
                         "<li><a href='#'>reactions 12</a></li>".
@@ -28,6 +33,7 @@
             "</div>".
             "</article>";
         ?>
+        </div>
         <div class="articles">
             <?php
             require ("database/conn.php");
