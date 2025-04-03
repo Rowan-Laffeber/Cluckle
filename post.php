@@ -34,6 +34,15 @@
             "</article>";
         ?>
         </div>
+        <div class="createComment">
+            <img src="assets/img/chicken-solid-white.png" alt="profilePicture">
+            <form class="addComment" action="postAction.php" method="post">
+                <textarea class="" name="textareaReply" id="textareaReply" placeholder="Cluck your clucks.."></textarea>
+                <input class="postButton" type="submit" name="submit" id="submit" value="Post">
+            </form>
+        </div>
+
+
         <div class="articles">
             <?php
             require ("database/conn.php");
