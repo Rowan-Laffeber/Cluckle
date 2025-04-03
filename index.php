@@ -32,7 +32,6 @@
       <?php
          require ("database/conn.php");
 
-
          $get_all_posts = $conn->prepare("SELECT * FROM post");
          $get_all_posts->execute();
          $posts = $get_all_posts->fetchAll();
@@ -50,7 +49,8 @@
            $datePosted = $post['datePosted'];
            $imageSrc = "assets/img/chicken-solid-white.png";
            $imageAlt = "assets/img/chicken-line-white.png";
-             echo "<article>".
+             echo 
+             "<article>".
                "<img src='$imageSrc' alt='$imageAlt'>".
                "<div class='userAndContent'>".
                "<div class='user'>".
@@ -58,9 +58,9 @@
                "<p class='handle'>$handle</p>".
                "<p class='timePosted'>&middot;$datePosted</p>".
                "</div>".
-               "<div class='content'>".
+               "<a class='content' href='post.php'>".
                "<p>$contentText</p>".
-               "</div>".
+               "</a>".
                "<div class='analytics'>".
                "<ul>".
                  "<li><a href='#'>reactions 12</a></li>".
