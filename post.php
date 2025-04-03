@@ -1,54 +1,114 @@
+<?php require ("partials/session.php"); ?>
+<?php require ("partials/top.php"); ?>
+<div class="pageContent">
+    <div class="createAndArticles">
+        <?php
 
-     <?php
-// Simpele PHP variabelen voor dynamische content
-$username = "handle";
-$join_date = "12-12-12";
-$following = 10;
-$followers = 10;
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clucker</title>
-    <link rel="stylesheet" href="styles/main.css"
-</head>
-<body>
-    <div class="sidebar-left">
-        <div class="logo">Clucker</div>
-        <nav>
-            <ul>
-                <li>Home</li>
-                <li>Explore</li>
-                <li>Notifications</li>
-                <li>Messages</li>
-                <li>Bookmarks</li>
-                <li>Profile</li>
-                <li>Premium</li>
-                <li>More</li>
-            </ul>
-        </nav>
-    </div>
 
-    <div class="main-content">
-        <div class="header">Home</div>
+        echo "<article class='post'>".
+            "<img src='assets/img/chicken-line-white.png' alt=''>".
+            "<div class='userAndContent'>".
+                "<div class='user'>".
+                    "<p class='username'>name</p>".
+                    "<p class='handle'>handle</p>".
+                "</div>".
+                "<div class='content'>".
+                    "<p>content</p>".
+                "</div>".
+                "<p class='timePosted'>&middot;time</p>".
+                "<div class='analytics'>".
+                    "<ul>".
+                        "<li><a href='#'>reactions 12</a></li>".
+                        "<li><a href='#'>Reclucks 5</a></li>".
+                        "<li><a href='#'>likes 32</a></li>".
+                        "<li><a href='#'>views 103</a></li>".
+                        "<li><a href='#'>bookmark</a></li>".
+                    "</ul>".
+                "</div>".
+            "</div>".
+            "</article>";
+        ?>
+        <div class="articles">
+            <?php
+            require ("database/conn.php");
 
-        <div class="profile-header">
-            <h1><?php echo $username; ?></h1>
-            <p>What's Clucking?</p>
-            <p>Joined <?php echo $join_date; ?></p>
-            <div class="profile-stats">
-                <span><strong><?php echo $following; ?></strong> following</span>
-                <span><strong><?php echo $followers; ?></strong> followers</span>
+
+            $get_all_posts = $conn->prepare("SELECT * FROM post");
+            $get_all_posts->execute();
+            $posts = $get_all_posts->fetchAll();
+
+            foreach ($posts as $post){
+                $stmt = $conn->prepare("SELECT * FROM account WHERE id =:userId");
+                $stmt->bindParam(":userId", $post['userId']);
+                $stmt->execute();
+                $account = $stmt->fetch();
+
+                $username = $account['name'];
+                $handle = $account['handle'];
+
+                $contentText = $post['contentText'];
+                $datePosted = $post['datePosted'];
+                $imageSrc = "assets/img/chicken-solid-white.png";
+                $imageAlt = "assets/img/chicken-line-white.png";
+                echo "<article>".
+                    "<img src='$imageSrc' alt='$imageAlt'>".
+                    "<div class='userAndContent'>".
+                    "<div class='user'>".
+                    "<p class='username'>$username</p>".
+                    "<p class='handle'>$handle</p>".
+                    "<p class='timePosted'>&middot;$datePosted</p>".
+                    "</div>".
+                    "<div class='content'>".
+                    "<p>$contentText</p>".
+                    "</div>".
+                    "<div class='analytics'>".
+                    "<ul>".
+                    "<li><a href='#'>reactions 12</a></li>".
+                    "<li><a href='#'>Reclucks 5</a></li>".
+                    "<li><a href='#'>likes 32</a></li>".
+                    "<li><a href='#'>views 103</a></li>".
+                    "<li><a href='#'>bookmark</a></li>".
+                    "</ul>".
+                    "</div>".
+                    "</div>".
+                    "</article>";
+            }
+            ?>
+        </div>
+        <div class="endOfContent">
+            <img src="assets/img/chicken-line-white.png" alt="">
+            <p>You've reached the end of Cluckle</p>
+            <div>
+                <p>How long have you been doomscrolling to see this?!</p>
+                <p>Go touch some grass!</p>
             </div>
         </div>
     </div>
 
-    <div class="sidebar-right">
-        <div class="search-box">
-            <input type="text" placeholder="Search">
+    <div class="sideMenu">
+        <div class="search">
+            <form action="search.php" method="post">
+                <input class="searchbutton" type="submit" name="submit" id="submit" value="&#128269;">
+                <label for="Search"></label>
+                <input class="search" type="Search" name="Search" id="Search" placeholder="Search" required >
+            </form>
+        </div>
+        <div class="premium">
+            <h2>Subscribe to Premium</h2>
+            <p>Subscribe to Premium for absolutely no benefits</p>
+            <button>Get Premium</button>
+        </div>
+        <div class="trending">
+            <h2>What's Clucking</h2>
+            <a href="#">trending</a>
+            <a href="#">trending</a>
+            <a href="#">trending</a>
+            <a href="#">trending</a>
+            <a href="#">trending</a>
+            <a href="#">trending</a>
         </div>
     </div>
+</div>
+
 </body>
 </html>
