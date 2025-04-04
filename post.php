@@ -7,21 +7,43 @@ require ("database/conn.php"); ?>
         <?php
 
 
+        $stmt = $conn->prepare("SELECT * FROM post WHERE id =:postId");
+        $stmt->bindParam(":postId", $_GET['postId'], PDO::PARAM_INT);
+        $stmt->execute();
+        $post = $stmt->fetch();
+        
+
+        $stmt = $conn->prepare("SELECT * FROM account WHERE id =:userId");
+        $stmt->bindParam(":userId", $post['userId'], PDO::PARAM_INT);
+        $stmt->execute();
+        $account = $stmt->fetch();
+        
+        $username = htmlspecialchars($account['name'], ENT_QUOTES, 'UTF-8');
+        $handle = htmlspecialchars($account['handle'], ENT_QUOTES, 'UTF-8');
+
+        $contentText = htmlspecialchars($post['contentText'], ENT_QUOTES, 'UTF-8');
+        $datePosted = htmlspecialchars($post['datePosted'], ENT_QUOTES, 'UTF-8');
+        
+        $imageSrc = "assets/img/chicken-solid-white.png";
+        $imageAlt = "assets/img/chicken-line-white.png";
+        
+
+
         echo "<article class='post'>".
 
             "<div class='userAndContent'>".
             "<div class='imgUser'>".
 
-                "<img src='assets/img/chicken-line-white.png' alt=''>".
+                "<img src='$imageSrc' alt='$imageAlt'>".
                     "<div class='user'>".
-                        "<p class='username'>name</p>".
-                        "<p class='handle'>handle</p>".
+                        "<p class='username'>$username</p>".
+                        "<p class='handle'>$handle</p>".
                     "</div>".
                 "</div>".
                 "<div class='content'>".
-                    "<p>content</p>".
+                    "<p>$contentText</p>".
                 "</div>".
-                "<p class='timePosted'>time</p>".
+                "<p class='timePosted'>$datePosted</p>".
                 "<div class='analytics'>".
                     "<ul>".
                         "<li><a href='#'>reactions 12</a></li>".
@@ -35,10 +57,13 @@ require ("database/conn.php"); ?>
             "</article>";
         ?>
         </div>
+        <?php 
+        $postId = $post['id'];
+        ?>
         <div class="createComment">
             <img src="assets/img/chicken-solid-white.png" alt="profilePicture">
-            <form class="addComment" action="postAction.php" method="post">
-                <textarea class="" name="textareaReply" id="textareaReply" placeholder="Cluck your clucks.."></textarea>
+            <form class="addComment" action="commentAction.php?postId=<?php echo $postId; ?>" method="post">
+                <textarea class="" name="textareaReply" id="textareaReply" placeholder="Cluck your clucks.." required></textarea>
                 <input class="postButton" type="submit" name="submit" id="submit" value="Post">
             </form>
         </div>
@@ -46,7 +71,6 @@ require ("database/conn.php"); ?>
 
         <div class="articles">
             <?php
-            require ("database/conn.php");
             
             if (isset($_GET['postId']) && is_numeric($_GET['postId'])) {
                 $postId = $_GET['postId'];
