@@ -64,7 +64,7 @@ require ("database/conn.php"); ?>
             <img src="assets/img/chicken-solid-white.png" alt="profilePicture">
             <form class="addComment" action="commentAction.php?postId=<?php echo $postId; ?>" method="post">
                 <textarea class="" name="textareaReply" id="textareaReply" placeholder="Cluck your clucks.." required></textarea>
-                <input class="postButton" type="submit" name="submit" id="submit" value="Post">
+                <input class="postButton" type="submit" name="submit" id="submit" value="Reply">
             </form>
         </div>
 
