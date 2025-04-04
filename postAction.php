@@ -1,14 +1,32 @@
-<?php 
+<?php
 require "database/conn.php";
-require ("partials/session.php");
-// $userId = $_SESSION['userId'];
-$insert_user = $conn->prepare("INSERT INTO post (userId,contentText,datePosted) VALUES (:userId, :text, :date)");
-$insert_user->bindParam(":userId", $_SESSION['userId']);
-$insert_user->bindParam(":text", $_POST['textarea']);
-// $insert_user->bindParam(":contentPic", $_POST['contentPic']);
-// $insert_user->bindParam(":contentVid", $_POST['contentVid']);
-$insert_user->bindParam(":date", date("Y-m-d"));
+require "partials/session.php";
 
-$insert_user->execute();
+$text = isset($_POST['textarea']) ? trim($_POST['textarea']) : '';
 
-header("location: index.php");
+if (empty($text)) {
+    header("Location: create_post.php?error=Content is required");
+    exit;
+}
+
+$text = htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
+
+try {
+
+    $insert_user = $conn->prepare("INSERT INTO post (userId, contentText, datePosted) VALUES (:userId, :text, :date)");
+
+    $insert_user->bindValue(':userId', $_SESSION['userId'], PDO::PARAM_INT);
+    $insert_user->bindValue(':text', $text, PDO::PARAM_STR);
+    $insert_user->bindValue(':date', date("Y-m-d"), PDO::PARAM_STR);
+
+    $insert_user->execute();
+
+    header("Location: index.php");
+    exit;
+} catch (PDOException $e) {
+    error_log("Error inserting post: " . $e->getMessage());
+    header("Location: index.php?error=Something went wrong. Please try again later.");
+    exit;
+}
+?>
+

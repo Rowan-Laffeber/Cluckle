@@ -263,16 +263,17 @@ div.pageContent {
                         }
                     }
 
-                    div.content {
+                    a.content {
                         display: flex;
                         flex-direction: column;
+                        color: white;
+                        text-decoration: none;
 
                         p {
                             color: white;
 
                         }
                     }
-
                     div.analytics {
                         ul {
                             display: flex;

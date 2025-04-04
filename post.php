@@ -1,5 +1,6 @@
 <?php require ("partials/session.php"); ?>
-<?php require ("partials/top.php"); ?>
+<?php require ("partials/top.php");
+require ("database/conn.php"); ?>
 <div class="pageContent">
     <div class="createAndArticles">
         <div class="currentPost">
@@ -46,47 +47,63 @@
         <div class="articles">
             <?php
             require ("database/conn.php");
-
-
-            $get_all_posts = $conn->prepare("SELECT * FROM post");
-            $get_all_posts->execute();
-            $posts = $get_all_posts->fetchAll();
-
-            foreach ($posts as $post){
-                $stmt = $conn->prepare("SELECT * FROM account WHERE id =:userId");
-                $stmt->bindParam(":userId", $post['userId']);
-                $stmt->execute();
-                $account = $stmt->fetch();
-
-                $username = $account['name'];
-                $handle = $account['handle'];
-
-                $contentText = $post['contentText'];
-                $datePosted = $post['datePosted'];
-                $imageSrc = "assets/img/chicken-solid-white.png";
-                $imageAlt = "assets/img/chicken-line-white.png";
-                echo "<article>".
-                    "<img src='$imageSrc' alt='$imageAlt'>".
-                    "<div class='userAndContent'>".
-                    "<div class='user'>".
-                    "<p class='username'>$username</p>".
-                    "<p class='handle'>$handle</p>".
-                    "<p class='timePosted'>&middot;$datePosted</p>".
-                    "</div>".
-                    "<div class='content'>".
-                    "<p>$contentText</p>".
-                    "</div>".
-                    "<div class='analytics'>".
-                    "<ul>".
-                    "<li><a href='#'>Reclucks 5</a></li>".
-                    "<li><a href='#'>likes 32</a></li>".
-                    "<li><a href='#'>bookmark</a></li>".
-                    "</ul>".
-                    "</div>".
-                    "</div>".
-                    "</article>";
+            
+            if (isset($_GET['postId']) && is_numeric($_GET['postId'])) {
+                $postId = $_GET['postId'];
+                
+                $get_all_comments = $conn->prepare("SELECT * FROM comments WHERE postId = :postId");
+                $get_all_comments->bindParam(":postId", $postId, PDO::PARAM_INT);
+                $get_all_comments->execute();
+            
+                $comments = $get_all_comments->fetchAll(PDO::FETCH_ASSOC);
+            
+                foreach ($comments as $comment) {
+                    $stmt = $conn->prepare("SELECT * FROM account WHERE id = :userId");
+                    $stmt->bindParam(":userId", $comment['userId'], PDO::PARAM_INT);
+                    $stmt->execute();
+            
+                    $account = $stmt->fetch(PDO::FETCH_ASSOC);
+            
+                    if ($account) {
+                        $username = htmlspecialchars($account['name'], ENT_QUOTES, 'UTF-8');
+                        $handle = htmlspecialchars($account['handle'], ENT_QUOTES, 'UTF-8');
+                    } else {
+                        $username = "Unknown User";
+                        $handle = "@unknown";
+                    }
+            
+                    $contentText = htmlspecialchars($comment['contentText'], ENT_QUOTES, 'UTF-8');
+                    $datePosted = htmlspecialchars($comment['datePosted'], ENT_QUOTES, 'UTF-8');
+                    
+                    $imageSrc = "assets/img/chicken-solid-white.png";
+                    $imageAlt = "assets/img/chicken-line-white.png";
+                    
+                    echo "<article>".
+                            "<img src='$imageSrc' alt='$imageAlt'>".
+                            "<div class='userAndContent'>".
+                                "<div class='user'>".
+                                    "<p class='username'>$username</p>".
+                                    "<p class='handle'>$handle</p>".
+                                    "<p class='timePosted'>&middot;$datePosted</p>".
+                                "</div>".
+                                "<div class='content'>".
+                                    "<p>$contentText</p>".
+                                "</div>".
+                                "<div class='analytics'>".
+                                    "<ul>".
+                                        "<li><a href='#'>Reclucks 5</a></li>".
+                                        "<li><a href='#'>likes 32</a></li>".
+                                        "<li><a href='#'>bookmark</a></li>".
+                                    "</ul>".
+                                "</div>".
+                            "</div>".
+                        "</article>";
+                }
+            } else {
+                echo "Invalid or missing postId.";
             }
             ?>
+            
         </div>
         <div class="endOfContent">
             <img src="assets/img/chicken-line-white.png" alt="">
