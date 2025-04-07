@@ -24,4 +24,9 @@
         <li <?php if ($url === '/Chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128269; Premium</a></li>
         <li <?php if ($url === '/Chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128269; More</a></li>
       </ul>
+      <ul>
+      <div class="copyrightAndPrivacy">
+        <a href="pricacy.php">Pricacy policy</a>
+        <p>copyright  &#169; Cluckle <?php echo date("Y");?> </p>
+      </div>
   </nav>

@@ -61,6 +61,16 @@ nav {
             margin: 0em auto;
         }
     }
+    div.copyrightAndPrivacy{
+        margin: auto;
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        p{
+            color: white;
+        }
+    }
 
 }
 
