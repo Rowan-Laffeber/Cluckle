@@ -26,7 +26,8 @@
       </ul>
       <ul>
       <div class="copyrightAndPrivacy">
-        <a href="pricacy.php">Pricacy policy</a>
+        <a href="privacy.php">Privacy policy</a>
         <p>copyright  &#169; Cluckle <?php echo date("Y");?> </p>
+       
       </div>
   </nav>

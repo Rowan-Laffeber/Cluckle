@@ -70,7 +70,12 @@ require("partials/top.php");
                             <ul>
                                 <li><a href='#'>reactions 12</a></li>
                                 <li><a href='#'>Reclucks 5</a></li>
-                                <li><a href='#'>likes 32</a></li>
+                                <li>
+                                <form class='contentAndLowernav' action='likeAction.php' method='post'>
+                                    <input class='' type='hidden' name='postId' id='postId' value='$postId'>
+                                    <input class='' type='submit' name='submit' id='submit' value='like'>
+                                </form>
+                                </li>
                                 <li><a href='#'>views 103</a></li>
                                 <li><a href='#'>bookmark</a></li>
                             </ul>
