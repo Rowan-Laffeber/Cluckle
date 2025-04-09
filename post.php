@@ -90,6 +90,9 @@ require ("database/conn.php"); ?>
                     $stmt = $conn->prepare("SELECT * FROM account WHERE id = :userId");
                     $stmt->bindParam(":userId", $comment['userId'], PDO::PARAM_INT);
                     $stmt->execute();
+                    $commentId = (int) $comment['id'];
+
+
             
                     $account = $stmt->fetch(PDO::FETCH_ASSOC);
             
@@ -123,7 +126,7 @@ require ("database/conn.php"); ?>
                                         "<li><a href='#'>Reclucks 5</a></li>".
                                         "<li>
                                             <form class='contentAndLowernav' action='likeCommentAction.php' method='post'>
-                                                <input class='' type='hidden' name='postId' id='postId' value='$postId'>
+                                                <input class='' type='hidden' name='commentId' id='commentId' value='$commentId'>
                                                 <input class='' type='submit' name='submit' id='submit' value='like'>
                                             </form>
                                         </li>".
