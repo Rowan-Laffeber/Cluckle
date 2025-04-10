@@ -77,6 +77,7 @@ require("partials/top.php");
 
             <h2>Questions?</h2>
             <p>Do you have questions about this policy? Please contact us at contact@cluckle.com.</p>
+         
 
         </div>
 
@@ -94,7 +95,8 @@ require("partials/top.php");
             <h2>Subscribe to Premium</h2>
             <p>Subscribe to Premium for absolutely no benefits</p>
             <button>Get Premium</button>
-        </div>
+            </div>
+
         <div class="trending">
             <h2>What's Clucking</h2>
             <a href="#">trending</a>
