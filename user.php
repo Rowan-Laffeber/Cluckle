@@ -74,6 +74,22 @@ $handle = htmlspecialchars($account['handle'], ENT_QUOTES, 'UTF-8');
                 $imageSrc = "assets/img/chicken-solid-white.png";
                 $imageAlt = "assets/img/chicken-line-white.png";
 
+                // Query to get like count
+                $likeStmt = $conn->prepare("SELECT COUNT(*) AS likeCount FROM likes WHERE postId = :postId");
+                $likeStmt->bindParam(":postId", $postId, PDO::PARAM_INT);
+                $likeStmt->execute();
+                $likeData = $likeStmt->fetch(PDO::FETCH_ASSOC);
+                $likeCount = $likeData['likeCount'];
+
+                // Query to get comment count
+                $commentStmt = $conn->prepare("SELECT COUNT(*) AS commentCount FROM comments WHERE postId = :postId");
+                $commentStmt->bindParam(":postId", $postId, PDO::PARAM_INT);
+                $commentStmt->execute();
+                $commentData = $commentStmt->fetch(PDO::FETCH_ASSOC);
+                $commentCount = $commentData['commentCount'];
+
+
+
                 echo "<article>".
                      "<img src='$imageSrc' alt='$imageAlt'>".
                      "<div class='userAndContent'>".
@@ -85,20 +101,22 @@ $handle = htmlspecialchars($account['handle'], ENT_QUOTES, 'UTF-8');
                      "<a class='content' href='post.php?postId=$postId'>".
                      "<p>$contentText</p>".
                      "</a>".
-                     "<div class='analytics'>".
-                     "<ul>".
-                     "<li><a href='#'>reactions 12</a></li>".
-                     "<li><a href='#'>Reclucks 5</a></li>".
-                     "<li>
-                        <form class='contentAndLowernav' action='likeAction.php' method='post'>
-                            <input class='' type='hidden' name='postId' id='postId' value='$postId'>
-                            <input class='' type='submit' name='submit' id='submit' value='like'>
-                        </form>
-                    </li>".
-                     "<li><a href='#'>views 103</a></li>".
-                     "<li><a href='#'>bookmark</a></li>".
-                     "</ul>".
-                     "</div>".
+                     "<div class='analytics'>
+                     <ul>
+                     <li><a> comment $commentCount</a>
+                     </li>
+                     <li><a href='#'>Reclucks 5</a></li>
+                     <li>
+                     <form class='contentAndLowernav' action='likeAction.php' method='post'>
+                         <input class='' type='hidden' name='postId' id='postId' value='$postId'>
+                         <input class='' type='submit' name='submit' id='submit' value='like'>
+                         <a>$likeCount</a>
+                     </form>
+                     </li>
+                     <li><a href='#'>views 103</a></li>
+                     <li><a href='#'>bookmark</a></li>
+                 </ul>
+                     </div>".
                      "</div>".
                      "</article>";
              }
