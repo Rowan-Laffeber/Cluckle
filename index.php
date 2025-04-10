@@ -92,7 +92,7 @@ require("partials/top.php");
                             <ul>
                                 <li><a> comment $commentCount</a>
                                 </li>
-                                <li><a href='#'>Reclucks 5</a></li>
+                                <li><a href='#'>Reclucks</a></li>
                                 <li>
                                 <form class='contentAndLowernav' action='likeAction.php' method='post'>
                                     <input class='' type='hidden' name='postId' id='postId' value='$postId'>
@@ -100,7 +100,7 @@ require("partials/top.php");
                                     <a>$likeCount</a>
                                 </form>
                                 </li>
-                                <li><a href='#'>views 103</a></li>
+                                <li><a href='#'>views</a></li>
                                 <li><a href='#'>bookmark</a></li>
                             </ul>
                         </div>

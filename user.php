@@ -105,7 +105,7 @@ $handle = htmlspecialchars($account['handle'], ENT_QUOTES, 'UTF-8');
                      <ul>
                      <li><a> comment $commentCount</a>
                      </li>
-                     <li><a href='#'>Reclucks 5</a></li>
+                     <li><a href='#'>Reclucks</a></li>
                      <li>
                      <form class='contentAndLowernav' action='likeAction.php' method='post'>
                          <input class='' type='hidden' name='postId' id='postId' value='$postId'>
@@ -113,7 +113,7 @@ $handle = htmlspecialchars($account['handle'], ENT_QUOTES, 'UTF-8');
                          <a>$likeCount</a>
                      </form>
                      </li>
-                     <li><a href='#'>views 103</a></li>
+                     <li><a href='#'>views</a></li>
                      <li><a href='#'>bookmark</a></li>
                  </ul>
                      </div>".
