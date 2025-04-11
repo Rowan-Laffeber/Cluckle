@@ -101,8 +101,12 @@ $handle = htmlspecialchars($account['handle'], ENT_QUOTES, 'UTF-8');
                      "</a>".
                      "<a class='content' href='post.php?postId=$postId'>".
                      "<p>$contentText</p>".
-                     "</a>".
-                     "<div class='analytics'>
+                     "</a>
+                    <form action='deletePost.php' method='post'>
+                         <input type='hidden' name='postId' id='postId' value='$postId'>
+                         <input type='submit' name='submit' id='submit' value='delete'>
+                     </form>
+                     <div class='analytics'>
                      <ul>
                      <li><a> comment $commentCount</a>
                      </li>
