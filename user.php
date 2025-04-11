@@ -4,7 +4,7 @@ require ("partials/session.php");
 require ("database/conn.php");
 
 $stmt = $conn->prepare("SELECT * FROM account WHERE id =:userId");
-$stmt->bindParam(":userId", $_SESSION['userId'], PDO::PARAM_INT);
+$stmt->bindParam(":userId", $_GET['userId'], PDO::PARAM_INT);
 $stmt->execute();
 $account = $stmt->fetch();
 
@@ -26,7 +26,6 @@ $handle = htmlspecialchars($account['handle'], ENT_QUOTES, 'UTF-8');
                 <div class="usernameHandle">
                     <p class="username"><?php echo $username; ?> </p>
                     <p class="handle"><?php echo $handle; ?></p>
-                    <p> class</p>
                 </div>
                 <p class="status">What's Clucking?!</p>
                 <div class="userInfo">
@@ -70,6 +69,7 @@ $handle = htmlspecialchars($account['handle'], ENT_QUOTES, 'UTF-8');
 
              foreach ($posts as $post) {
                 $postId = (int)$post['id'];
+                $userId = (int)$post['userId'];
                 $contentText = htmlspecialchars($post['contentText'], ENT_QUOTES, 'UTF-8');
                 $datePosted = htmlspecialchars($post['datePosted'], ENT_QUOTES, 'UTF-8');
                 $imageSrc = "assets/img/chicken-solid-white.png";
@@ -93,13 +93,13 @@ $handle = htmlspecialchars($account['handle'], ENT_QUOTES, 'UTF-8');
 
                 echo "<article>".
                      "<img src='$imageSrc' alt='$imageAlt'>".
-                     "<div class='userAndContent'>".
-                     "<div class='user'>".
-                     "<p class='username'>$username</p>".
-                     "<p class='handle'>$handle</p>".
-                     "<p class='timePosted'>&middot;$datePosted</p>".
-                     "</div>".
-                     "<a class='content' href='post.php?postId=$postId'>".
+                     "<div class='userAndContent'>
+                        <a class='user' href='user.php?userId=$userId'>
+                            <p class='username'>$username</p>
+                            <p class='handle'>$handle</p>
+                            <p class='timePosted'>&middot; $datePosted</p>
+                        </a>
+                     <a class='content' href='post.php?postId=$postId'>".
                      "<p>$contentText</p>".
                      "</a>".
                      "<div class='analytics'>

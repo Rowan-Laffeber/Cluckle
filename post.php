@@ -17,7 +17,9 @@ require ("database/conn.php"); ?>
         $stmt->bindParam(":userId", $post['userId'], PDO::PARAM_INT);
         $stmt->execute();
         $account = $stmt->fetch();
-        
+
+
+        $userId = (int) $account['id'];
         $username = htmlspecialchars($account['name'], ENT_QUOTES, 'UTF-8');
         $handle = htmlspecialchars($account['handle'], ENT_QUOTES, 'UTF-8');
 
@@ -50,12 +52,12 @@ require ("database/conn.php"); ?>
             "<div class='userAndContent'>".
             "<div class='imgUser'>".
 
-                "<img src='$imageSrc' alt='$imageAlt'>".
-                    "<div class='user'>".
-                        "<p class='username'>$username</p>".
-                        "<p class='handle'>$handle</p>".
-                    "</div>".
-                "</div>".
+                "<img src='$imageSrc' alt='$imageAlt'>
+                <a class='user' href='user.php?userId=$userId'>
+                    <p class='username'>$username</p>
+                    <p class='handle'>$handle</p>
+                </a>
+                </div>".
                 "<div class='content'>".
                     "<p>$contentText</p>".
                 "</div>".
@@ -107,6 +109,7 @@ require ("database/conn.php"); ?>
                     $stmt->bindParam(":userId", $comment['userId'], PDO::PARAM_INT);
                     $stmt->execute();
                     $commentId = (int) $comment['id'];
+                    $userIdComment = (int) $comment['userId'];
 
 
             
@@ -137,13 +140,13 @@ require ("database/conn.php"); ?>
                     
                     echo "<article>".
                             "<img src='$imageSrc' alt='$imageAlt'>".
-                            "<div class='userAndContent'>".
-                                "<div class='user'>".
-                                    "<p class='username'>$username</p>".
-                                    "<p class='handle'>$handle</p>".
-                                    "<p class='timePosted'>&middot;$datePosted</p>".
-                                "</div>".
-                                "<div class='content'>".
+                            "<div class='userAndContent'>
+                                <a class='user' href='user.php?userId=$userIdComment'>
+                                    <p class='username'>$username</p>
+                                    <p class='handle'>$handle</p>
+                                    <p class='timePosted'>&middot; $datePosted</p>
+                                </a>
+                                <div class='content'>".
                                     "<p>$contentText</p>".
                                 "</div>".
                                 "<div class='analytics'>".

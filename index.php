@@ -46,6 +46,7 @@ require("partials/top.php");
                 $stmt->execute();
                 $account = $stmt->fetch(PDO::FETCH_ASSOC);
 
+                $userId = htmlspecialchars($account['id'], ENT_QUOTES, 'UTF-8');
                 $username = htmlspecialchars($account['name'], ENT_QUOTES, 'UTF-8');
                 $handle = htmlspecialchars($account['handle'], ENT_QUOTES, 'UTF-8');
                 $postId = (int) $post['id'];
@@ -80,11 +81,11 @@ require("partials/top.php");
                 <article>
                     <img src='$imageSrc' alt='$imageAlt'>
                     <div class='userAndContent'>
-                        <div class='user'>
+                        <a class='user' href='user.php?userId=$userId'>
                             <p class='username'>$username</p>
                             <p class='handle'>$handle</p>
                             <p class='timePosted'>&middot; $datePosted</p>
-                        </div>
+                        </a>
                         <a class='content' href='post.php?postId=$postId'>
                             <p>$contentText</p>
                         </a>
