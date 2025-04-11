@@ -16,9 +16,9 @@
         <div class="loginSideText">
             <h1>Whats Clucking</h1>
             <form action="loginaction.php" method="post">
-                <label for="Email"></label>
+                <label for="Email">Email</label>
                     <input type="Email" name="Email" id="Email" placeholder="Email" required >
-                <label for="password"></label>
+                <label for="password">Password</label>
                     <input type="password" name="password" id="password" placeholder="Password">
                 <input class="loginButton" type="submit" name="submit" id="submit" value="Log in">
             </form>

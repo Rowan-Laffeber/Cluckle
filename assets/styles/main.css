@@ -626,8 +626,10 @@ div.login {
             flex-direction: column;
 
             label {
-                font-size: 3em;
+                font-size: 1em;
                 color: white;
+                margin-block-start: 0em;
+                margin-block-end: 0em;
             }
 
             input {
@@ -637,7 +639,7 @@ div.login {
                 border: transparent;
                 color: black;
                 font-size: 1.5em;
-                margin: 1em 0em;
+                margin: 0.3em 0em 1em 0em;
                 padding: 0em 0em 0em 0.5em;
                         
             }
@@ -700,8 +702,10 @@ div.createAccount {
                     display: flex;
                     flex-direction: column;
                     label {
-                        font-size: 3em;
+                        font-size: 1em;
                         color: white;
+                        margin-block-start: 0em;
+                        margin-block-end: 0em;
                     }
         
                     input {
@@ -711,7 +715,7 @@ div.createAccount {
                         border: transparent;
                         color: black;
                         font-size: 1.5em;
-                        margin: 1em 0em;
+                        margin: 0.3em 0em 1em 0em;
                         padding: 0em 0em 0em 0.5em;
                     }
                     input:focus {

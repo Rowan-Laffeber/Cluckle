@@ -18,20 +18,21 @@
             <form action="createaccount-action.php" method="POST"> <!-- loginaction.php -->
                 <div class="createAccountFull">
                     <div class="createAccountHalf">
-                        <label for="username"></label>
+                        <label for="username">Username</label>
                             <input type="text" name="username" id="username" placeholder="Username" required >
-                        <label for="handle"></label>
+                        <label for="handle">Handle</label>
                             <input type="text" name="handle" id="handle" placeholder="Handle" required >
-                        <label for="phonenumber"></label>
+                        <label for="phonenumber">Phone number</label>
                             <input type="tel" name="phonenumber" id="phonenumber" placeholder="Phone number" required minlength="11" maxlength="14">
                     </div>
                     <div class="createAccountHalf createAccountRight">
-                        <label for="Email"></label>
+                        <label for="Email">Email</label>
                             <input type="Email" name="Email" id="Email" placeholder="Email" required >
-                        <label for="password"></label>
+                        <label for="password">Password</label>
                             <input type="password" name="password" id="password" placeholder="Password" required>
-                        <label for="password"></label>
-                            <input type="password" name="password" id="password" placeholder="Repeat Password" >
+                        <label for="repeat_password">Repeat password</label>
+                            <input type="password" name="repeatPassword" id="repeatPassword" placeholder="Repeat Password" required>
+
                     </div>
                 </div>
                 
