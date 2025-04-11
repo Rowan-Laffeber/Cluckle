@@ -8,6 +8,7 @@ $stmt->bindParam(":userId", $_SESSION['userId'], PDO::PARAM_INT);
 $stmt->execute();
 $account = $stmt->fetch();
 
+$status = htmlspecialchars($account['status'], ENT_QUOTES, 'UTF-8');
 $username = htmlspecialchars($account['name'], ENT_QUOTES, 'UTF-8');
 $handle = htmlspecialchars($account['handle'], ENT_QUOTES, 'UTF-8');
 ?>
@@ -27,7 +28,7 @@ $handle = htmlspecialchars($account['handle'], ENT_QUOTES, 'UTF-8');
                     <p class="username"><?php echo $username; ?> </p>
                     <p class="handle"><?php echo $handle; ?></p>
                 </div>
-                <p class="status">What's Clucking?!</p>
+                <p class="status"><?php echo $status?></p><button><a href="editProfile.php">edit profile</a></button>
                 <div class="userInfo">
                     <div class="userAbout">
                         <p>everywhere</p>

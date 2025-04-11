@@ -55,19 +55,12 @@ require("partials/top.php");
                 $imageSrc = "assets/img/chicken-solid-white.png";
                 $imageAlt = "assets/img/chicken-line-white.png";
 
-                // $likeCount = ??
-                // $commentCount = ??
-
-
-
-                // Query to get like count
                 $likeStmt = $conn->prepare("SELECT COUNT(*) AS likeCount FROM likes WHERE postId = :postId");
                 $likeStmt->bindParam(":postId", $postId, PDO::PARAM_INT);
                 $likeStmt->execute();
                 $likeData = $likeStmt->fetch(PDO::FETCH_ASSOC);
                 $likeCount = $likeData['likeCount'];
 
-                // Query to get comment count
                 $commentStmt = $conn->prepare("SELECT COUNT(*) AS commentCount FROM comments WHERE postId = :postId");
                 $commentStmt->bindParam(":postId", $postId, PDO::PARAM_INT);
                 $commentStmt->execute();

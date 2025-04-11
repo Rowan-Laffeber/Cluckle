@@ -12,20 +12,17 @@ if (empty($commentId)) {
 $commentId = htmlspecialchars($commentId, ENT_QUOTES, 'UTF-8');
 
 try {
-    // Check if the like already exists
     $check_like = $conn->prepare("SELECT * FROM likecomment WHERE userId = :userId AND commentId = :commentId");
     $check_like->bindValue(':userId', $_SESSION['userId'], PDO::PARAM_INT);
     $check_like->bindValue(':commentId', $commentId, PDO::PARAM_INT);
     $check_like->execute();
 
     if ($check_like->rowCount() > 0) {
-        // Like exists, so remove it
         $delete_like = $conn->prepare("DELETE FROM likecomment WHERE userId = :userId AND commentId = :commentId");
         $delete_like->bindValue(':userId', $_SESSION['userId'], PDO::PARAM_INT);
         $delete_like->bindValue(':commentId', $commentId, PDO::PARAM_INT);
         $delete_like->execute();
     } else {
-        // Like does not exist, so insert it
         $insert_like = $conn->prepare("INSERT INTO likecomment (userId, commentId) VALUES (:userId, :commentId)");
         $insert_like->bindValue(':userId', $_SESSION['userId'], PDO::PARAM_INT);
         $insert_like->bindValue(':commentId', $commentId, PDO::PARAM_INT);
