@@ -125,6 +125,15 @@ require ("database/conn.php"); ?>
                     
                     $imageSrc = "assets/img/chicken-solid-white.png";
                     $imageAlt = "assets/img/chicken-line-white.png";
+
+                    // Query to get like count
+                    $likeStmt = $conn->prepare("SELECT COUNT(*) AS likeCountComment FROM likecomment WHERE commentId = :commentId");
+                    $likeStmt->bindParam(":commentId", $commentId, PDO::PARAM_INT);
+                    $likeStmt->execute();
+                    $likeData = $likeStmt->fetch(PDO::FETCH_ASSOC);
+                    $likeCountComment = $likeData['likeCountComment'];
+
+                    
                     
                     echo "<article>".
                             "<img src='$imageSrc' alt='$imageAlt'>".
@@ -139,11 +148,12 @@ require ("database/conn.php"); ?>
                                 "</div>".
                                 "<div class='analytics'>".
                                     "<ul>".
-                                        "<li><a href='#'>Reclucks 5</a></li>".
+                                        "<li><a href='#'>Reclucks</a></li>".
                                         "<li>
                                             <form class='contentAndLowernav' action='likeCommentAction.php' method='post'>
-                                                <input class='' type='hidden' name='commentId' id='commentId' value='$commentId'>
-                                                <input class='' type='submit' name='submit' id='submit' value='like'>
+                                                <input type='hidden' name='commentId' id='commentId' value='$commentId'>
+                                                <input type='submit' name='submit' id='submit' value='like'>
+                                                <a>$likeCountComment</a>
                                             </form>
                                         </li>".
                                         "<li><a href='#'>bookmark</a></li>".

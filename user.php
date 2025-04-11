@@ -26,6 +26,7 @@ $handle = htmlspecialchars($account['handle'], ENT_QUOTES, 'UTF-8');
                 <div class="usernameHandle">
                     <p class="username"><?php echo $username; ?> </p>
                     <p class="handle"><?php echo $handle; ?></p>
+                    <p> class</p>
                 </div>
                 <p class="status">What's Clucking?!</p>
                 <div class="userInfo">
