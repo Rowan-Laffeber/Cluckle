@@ -247,9 +247,10 @@ div.pageContent {
                     flex-direction: column;
                     flex: 8;
 
-                    div.user {
+                    a.user {
                         display: flex;
                         flex-direction: row;
+                        text-decoration: none;
 
                         p {
                             color: white;
@@ -348,7 +349,8 @@ div.pageContent {
                             margin: 0em 1em 0em 0em;
                             flex: 1;
                         }
-                        div.user{
+                        a.user{
+                        text-decoration: none;
                             p {
                                 color: white;
                             }
