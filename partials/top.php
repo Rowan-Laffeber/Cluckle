@@ -16,7 +16,6 @@
         <img src="assets/img/chicken-line-white.png" alt="">
 
         <li><a <?php if ($url === '/Chirpify/index.php'){ echo "class='active'";} ?> href="index.php">&#128269; Home</a></li>
-        <li><a <?php if ($url === '/Chirpify/user.php'){ echo "class='active'";} ?> href="user.php">&#128269; Users</a></li>
         <li <?php if ($url === '/Chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128269; Notifications</a></li>
         <li <?php if ($url === '/Chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128269; Messages</a></li>
         <li <?php if ($url === '/Chirpify/#'){ echo "class='active'";} ?>><a href="#">&#128193; Bookmarks</a></li>

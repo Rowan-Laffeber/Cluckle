@@ -55,9 +55,6 @@ $handle = htmlspecialchars($account['handle'], ENT_QUOTES, 'UTF-8');
             <ul>
                 <li><a href="#">Clucks</a></li>
                 <li><a href="#">Replies</a></li>
-                <li><a href="#">Subs</a></li>
-                <li><a href="#">Highlights</a></li>
-                <li><a href="#">Media</a></li>
             </ul>
         </div>
 
