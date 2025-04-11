@@ -26,14 +26,8 @@
       </ul>
       <ul>
       <div class="copyrightAndPrivacy">
-<<<<<<< Updated upstream
-        <a href="privacy.php">Privacy policy</a>
-        <p>copyright  &#169; Cluckle <?php echo date("Y");?> </p>
-       
-=======
-        <a href="privacy.php">Pricacy policy</a>
+          <a href="privacy.php">Privacy policy</a>
         <p>copyright  &#169; Cluckle <?php echo date("Y");?> </p>
           <a href="information.php">information</a>
->>>>>>> Stashed changes
       </div>
   </nav>
