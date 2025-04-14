@@ -30,7 +30,7 @@
                             <input type="Email" name="Email" id="Email" placeholder="Email" required >
                         <label for="password">Password</label>
                             <input type="password" name="password" id="password" placeholder="Password" required>
-                        <label for="repeat_password">Repeat password</label>
+                        <label for="repeatPassword">Repeat password</label>
                             <input type="password" name="repeatPassword" id="repeatPassword" placeholder="Repeat Password" required>
 
                     </div>
