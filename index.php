@@ -14,7 +14,7 @@ require("partials/top.php");
 
         <div class="createPost">
             <img src="assets/img/chicken-solid-white.png" alt="profilePicture">
-            <form class="contentAndLowernav" action="postAction.php" method="post">
+            <form class="contentAndLowernav" action="backend/postAction.php" method="post">
                 <textarea name="textarea" id="textarea" placeholder="What's Clucking?!"></textarea>
                 <div class="lowerNav">
                     <div class="addables">
@@ -88,7 +88,7 @@ require("partials/top.php");
                                 </li>
                                 <li><a href='#'>Reclucks</a></li>
                                 <li>
-                                <form class='contentAndLowernav' action='likeAction.php' method='post'>
+                                <form class='contentAndLowernav' action='backend/likeAction.php' method='post'>
                                     <input class='' type='hidden' name='postId' id='postId' value='$postId'>
                                     <input class='' type='submit' name='submit' id='submit' value='like'>
                                     <a>$likeCount</a>

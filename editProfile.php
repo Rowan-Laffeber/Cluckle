@@ -28,7 +28,7 @@ $handle = htmlspecialchars($account['handle'], ENT_QUOTES, 'UTF-8');
                     <p class="username"><?php echo $username; ?> </p>
                     <p class="handle"><?php echo $handle; ?></p>
                 </div>
-                <form action="editProfileAction.php" method='post'>
+                <form action="backend/editProfileAction.php" method='post'>
                     <textarea name="textarea" id="textarea" ></textarea>
                     <input type='hidden' name='userId' id='userId' value='<?php echo $userId?>'>
 

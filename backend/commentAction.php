@@ -1,11 +1,11 @@
 <?php
-require "database/conn.php";
-require "partials/session.php";
+require "../database/conn.php";
+require "../partials/session.php";
 
 $text = isset($_POST['textareaReply']) ? trim($_POST['textareaReply']) : '';
 
 if (empty($text)) {
-    header("Location: post.php?postId=" . $_GET['postId'] . "&error=Content is required");
+    header("Location: ../post.php?postId=" . $_GET['postId'] . "&error=Content is required");
     exit;
 }
 
@@ -24,15 +24,15 @@ if ($postId && $text) {
 
         $stmt->execute();
 
-        header("Location: post.php?postId=" . $postId);
+        header("Location: ../post.php?postId=" . $postId);
         exit;
     } catch (PDOException $e) {
         error_log("Error inserting comment: " . $e->getMessage());
-        header("Location: post.php?postId=" . $postId . "&error=Something went wrong. Please try again later.");
+        header("Location: ../post.php?postId=" . $postId . "&error=Something went wrong. Please try again later.");
         exit;
     }
 } else {
-    header("Location: post.php?postId=" . $postId . "&error=Invalid postId or comment content.");
+    header("Location: ../post.php?postId=" . $postId . "&error=Invalid postId or comment content.");
     exit;
 }
 ?>

@@ -104,7 +104,7 @@ $handle = htmlspecialchars($account['handle'], ENT_QUOTES, 'UTF-8');
                      </li>
                      <li><a href='#'>Reclucks</a></li>
                      <li>
-                     <form class='contentAndLowernav' action='likeAction.php' method='post'>
+                     <form class='contentAndLowernav' action='backend/likeAction.php' method='post'>
                          <input class='' type='hidden' name='postId' id='postId' value='$postId'>
                          <input class='' type='submit' name='submit' id='submit' value='like'>
                          <a>$likeCount</a>

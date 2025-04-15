@@ -1,11 +1,11 @@
 <?php
-require "database/conn.php";
-require "partials/session.php";
+require "../database/conn.php";
+require "../partials/session.php";
 
 $status = isset($_POST['textarea']) ? trim($_POST['textarea']) : '';
 
 if (empty($status)) {
-    header("Location: profile.php?error=Status cannot be empty");
+    header("Location: ../profile.php?error=Status cannot be empty");
     exit;
 }
 
@@ -17,11 +17,11 @@ try {
     $update_status->bindValue(':userId', $_SESSION['userId'], PDO::PARAM_INT);
     $update_status->execute();
 
-    header("Location: profile.php?success=Status updated");
+    header("Location: ../profile.php?success=Status updated");
     exit;
 } catch (PDOException $e) {
     error_log("Error updating status: " . $e->getMessage());
-    header("Location: profile.php?error=Something went wrong. Please try again later.");
+    header("Location: ../profile.php?error=Something went wrong. Please try again later.");
     exit;
 }
 ?>

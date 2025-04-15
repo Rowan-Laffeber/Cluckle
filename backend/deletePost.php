@@ -1,11 +1,11 @@
 <?php
-require "database/conn.php";
-require "partials/session.php";
+require "../database/conn.php";
+require "../partials/session.php";
 
 $postId = isset($_POST['postId']) ? trim($_POST['postId']) : '';
 
 if (empty($postId)) {
-    header("Location: profile.php?error=Cannot validate postId");
+    header("Location: ../profile.php?error=Cannot validate postId");
     exit;
 }
 
@@ -17,11 +17,11 @@ try {
         $delete_post->bindValue(':postId', $postId, PDO::PARAM_INT);
         $delete_post->execute();
 
-    header("Location: profile.php");
+    header("Location: ../profile.php");
     exit;
 } catch (PDOException $e) {
     error_log("Error toggling like: " . $e->getMessage());
-    header("Location: profile.php?error=Something went wrong. Please try again later.");
+    header("Location: ../profile.php?error=Something went wrong. Please try again later.");
     exit;
 }
 ?>

@@ -1,11 +1,11 @@
 <?php
-require "database/conn.php";
-require "partials/session.php";
+require "../database/conn.php";
+require "../partials/session.php";
 
 $text = isset($_POST['textarea']) ? trim($_POST['textarea']) : '';
 
 if (empty($text)) {
-    header("Location: create_post.php?error=Content is required");
+    header("Location: ../index.php?error=Content is required");
     exit;
 }
 
@@ -21,11 +21,11 @@ try {
 
     $insert_user->execute();
 
-    header("Location: index.php");
+    header("Location: ../index.php");
     exit;
 } catch (PDOException $e) {
     error_log("Error inserting post: " . $e->getMessage());
-    header("Location: index.php?error=Something went wrong. Please try again later.");
+    header("Location: ../index.php?error=Something went wrong. Please try again later.");
     exit;
 }
 ?>

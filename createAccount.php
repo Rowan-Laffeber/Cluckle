@@ -15,7 +15,7 @@
         <img src="assets/img/chicken-line-white.png" alt="">
         <div class="createAccountSideText">
             <h1>Whats Clucking</h1>
-            <form action="createaccount-action.php" method="POST"> <!-- loginaction.php -->
+            <form action="backend/createaccountAction.php" method="POST"> <!-- loginaction.php -->
                 <div class="createAccountFull">
                     <div class="createAccountHalf">
                         <label for="username">Username</label>

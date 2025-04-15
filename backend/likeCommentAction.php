@@ -1,11 +1,11 @@
 <?php
-require "database/conn.php";
-require "partials/session.php";
+require "../database/conn.php";
+require "../partials/session.php";
 
 $commentId = isset($_POST['commentId']) ? trim($_POST['commentId']) : '';
 
 if (empty($commentId)) {
-    header("Location: index.php?error=Cannot validate commentId");
+    header("Location: ../index.php?error=Cannot validate commentId");
     exit;
 }
 
@@ -29,11 +29,11 @@ try {
         $insert_like->execute();
     }
 
-    header("Location: index.php");
+    header("Location: ../index.php");
     exit;
 } catch (PDOException $e) {
     error_log("Error toggling like: " . $e->getMessage());
-    header("Location: index.php?error=Something went wrong. Please try again later.");
+    header("Location: ../index.php?error=Something went wrong. Please try again later.");
     exit;
 }
 ?>

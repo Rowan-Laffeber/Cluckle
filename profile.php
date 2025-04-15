@@ -72,14 +72,12 @@ $handle = htmlspecialchars($account['handle'], ENT_QUOTES, 'UTF-8');
                 $imageSrc = "assets/img/chicken-solid-white.png";
                 $imageAlt = "assets/img/chicken-line-white.png";
 
-                // Query to get like count
                 $likeStmt = $conn->prepare("SELECT COUNT(*) AS likeCount FROM likes WHERE postId = :postId");
                 $likeStmt->bindParam(":postId", $postId, PDO::PARAM_INT);
                 $likeStmt->execute();
                 $likeData = $likeStmt->fetch(PDO::FETCH_ASSOC);
                 $likeCount = $likeData['likeCount'];
 
-                // Query to get comment count
                 $commentStmt = $conn->prepare("SELECT COUNT(*) AS commentCount FROM comments WHERE postId = :postId");
                 $commentStmt->bindParam(":postId", $postId, PDO::PARAM_INT);
                 $commentStmt->execute();
@@ -99,7 +97,7 @@ $handle = htmlspecialchars($account['handle'], ENT_QUOTES, 'UTF-8');
                      "<a class='content' href='post.php?postId=$postId'>".
                      "<p>$contentText</p>".
                      "</a>
-                    <form action='deletePost.php' method='post'>
+                    <form action='backend/deletePost.php' method='post'>
                          <input type='hidden' name='postId' id='postId' value='$postId'>
                          <input type='submit' name='submit' id='submit' value='delete'>
                      </form>
@@ -109,7 +107,7 @@ $handle = htmlspecialchars($account['handle'], ENT_QUOTES, 'UTF-8');
                      </li>
                      <li><a href='#'>Reclucks</a></li>
                      <li>
-                     <form class='contentAndLowernav' action='likeAction.php' method='post'>
+                     <form class='contentAndLowernav' action='backend/likeAction.php' method='post'>
                          <input class='' type='hidden' name='postId' id='postId' value='$postId'>
                          <input class='' type='submit' name='submit' id='submit' value='like'>
                          <a>$likeCount</a>

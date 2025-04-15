@@ -67,7 +67,7 @@ require ("database/conn.php"); ?>
                 </li>
                 <li><a href='#'>Reclucks</a></li>
                 <li>
-                <form class='contentAndLowernav' action='likeAction.php' method='post'>
+                <form class='contentAndLowernav' action='backend/likeAction.php' method='post'>
                     <input class='' type='hidden' name='postId' id='postId' value='$postId'>
                     <input class='' type='submit' name='submit' id='submit' value='like'>
                     <a>$likeCount</a>
@@ -84,7 +84,7 @@ require ("database/conn.php"); ?>
 
         <div class="createComment">
             <img src="assets/img/chicken-solid-white.png" alt="profilePicture">
-            <form class="addComment" action="commentAction.php?postId=<?php echo $postId; ?>" method="post">
+            <form class="addComment" action="backend/commentAction.php?postId=<?php echo $postId; ?>" method="post">
                 <textarea class="" name="textareaReply" id="textareaReply" placeholder="Cluck your clucks.." required></textarea>
                 <input class="postButton" type="submit" name="submit" id="submit" value="Reply">
             </form>
@@ -151,7 +151,7 @@ require ("database/conn.php"); ?>
                                     "<ul>".
                                         "<li><a href='#'>Reclucks</a></li>".
                                         "<li>
-                                            <form class='contentAndLowernav' action='likeCommentAction.php' method='post'>
+                                            <form class='contentAndLowernav' action='backend/likeCommentAction.php' method='post'>
                                                 <input type='hidden' name='commentId' id='commentId' value='$commentId'>
                                                 <input type='submit' name='submit' id='submit' value='like'>
                                                 <a>$likeCountComment</a>
