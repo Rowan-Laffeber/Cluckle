@@ -61,7 +61,7 @@ $handle = htmlspecialchars($account['handle'], ENT_QUOTES, 'UTF-8');
         <div class="articles">
              <?php
              $get_all_posts = $conn->prepare("SELECT * FROM post WHERE userId =:userId");
-             $get_all_posts->bindParam(":userId", $_SESSION['userId'], PDO::PARAM_INT);
+             $get_all_posts->bindParam(":userId", $_GET['userId'], PDO::PARAM_INT);
              $get_all_posts->execute();
              $posts = $get_all_posts->fetchAll(PDO::FETCH_ASSOC);
 
